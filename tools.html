@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tools Regie Eller Uses">
+    <title>Tools - Regie Eller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">◐</button>
+
+    <main>
+        <header>
+            <h1>Tools</h1>
+            <p><a href="index.html">← Back</a></p>
+        </header>
+
+        <section class="tools-category">
+            <h2>Writing</h2>
+            <ul class="tools-list">
+                <li>Obsidian for notes and drafts</li>
+                <li>Substack for publishing</li>
+                <li>Grammarly for editing</li>
+            </ul>
+        </section>
+
+        <section class="tools-category">
+            <h2>Photography</h2>
+            <ul class="tools-list">
+                <li>Camera body: [Your camera]</li>
+                <li>Favorite lens: [Your lens]</li>
+                <li>Editing: Lightroom</li>
+            </ul>
+        </section>
+
+        <section class="tools-category">
+            <h2>Cooking</h2>
+            <ul class="tools-list">
+                <li>Favorite knife: [Your knife]</li>
+                <li>Go-to pan: [Your pan]</li>
+                <li>Recipe source: [Your source]</li>
+            </ul>
+        </section>
+
+        <section class="tools-category">
+            <h2>Work</h2>
+            <ul class="tools-list">
+                <li>Operating system: [Your OS]</li>
+                <li>Text editor: [Your editor]</li>
+                <li>Database tools: [Your tools]</li>
+            </ul>
+        </section>
+
+        <section class="tools-category">
+            <h2>Misc</h2>
+            <ul class="tools-list">
+                <li>Browser: [Your browser]</li>
+                <li>Task management: [Your tool]</li>
+                <li>Reading: [Your app/device]</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Dark mode toggle
+        const toggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        toggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+</html>

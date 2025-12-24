@@ -5,57 +5,89 @@
     box-sizing: border-box;
 }
 
+/* Theme colors */
+:root {
+    --bg-primary: #f5f1e8;
+    --bg-card: #fffef9;
+    --text-primary: #1a1410;
+    --text-secondary: #5a524a;
+    --text-muted: #8a8278;
+    --border-color: #1a1410;
+    --border-light: #d4cfc4;
+    --shadow: rgba(26, 20, 16, 0.08);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1410;
+    --bg-card: #252018;
+    --text-primary: #e8e4dc;
+    --text-secondary: #c4bfb4;
+    --text-muted: #9a9488;
+    --border-color: #e8e4dc;
+    --border-light: #3a3428;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
 /* Typography and layout */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'IM Fell English', Georgia, serif;
     font-size: 18px;
-    line-height: 1.7;
-    color: #2c2c2c;
-    background-color: #fafafa;
+    line-height: 1.8;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
     max-width: 680px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Main container */
 main {
-    background-color: #fff;
+    background-color: var(--bg-card);
     padding: 3rem;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Header */
 header {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 2px solid #2c2c2c;
+    border-bottom: 2px solid var(--border-color);
+    transition: border-color 0.3s ease;
 }
 
 /* Headings */
 h1 {
-    font-size: 2.75rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #1a1a1a;
+    font-family: 'IM Fell English SC', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 h2 {
+    font-family: 'IM Fell English SC', Georgia, serif;
     font-size: 0.875rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
-    font-weight: 600;
-    color: #666;
+    font-weight: 400;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
 }
 
 h3 {
     font-size: 1.125rem;
-    font-weight: 500;
-    line-height: 1.5;
+    font-weight: 400;
+    line-height: 1.6;
     margin-bottom: 1rem;
-    color: #1a1a1a;
+    color: var(--text-primary);
+    font-style: italic;
+    transition: color 0.3s ease;
 }
 
 /* Sections and spacing */
@@ -69,7 +101,8 @@ section:last-of-type {
 
 p {
     margin-bottom: 0.875rem;
-    color: #444;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 p:last-child {
@@ -78,14 +111,40 @@ p:last-child {
 
 /* Links */
 a {
-    color: #2c2c2c;
+    color: var(--text-primary);
     text-decoration: none;
-    border-bottom: 1px solid #2c2c2c;
-    transition: opacity 0.2s ease;
+    border-bottom: 1px solid var(--text-primary);
+    transition: opacity 0.2s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
     opacity: 0.6;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow);
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg);
+    opacity: 0.8;
 }
 
 /* Film list */
@@ -96,10 +155,11 @@ a:hover {
 
 .film-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border-light);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    transition: border-color 0.3s ease;
 }
 
 .film-list li:last-child {
@@ -107,9 +167,35 @@ a:hover {
 }
 
 .rating {
-    color: #999;
+    color: var(--text-muted);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+/* Tools list */
+.tools-category {
+    margin-bottom: 2rem;
+}
+
+.tools-category:last-of-type {
+    margin-bottom: 0;
+}
+
+.tools-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tools-list li {
+    padding: 0.4rem 0;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.tools-list li::before {
+    content: "— ";
+    color: var(--text-muted);
 }
 
 /* Responsive adjustments */
