@@ -88,6 +88,30 @@ a:hover {
     opacity: 0.6;
 }
 
+/* Film list */
+.film-list {
+    list-style: none;
+    padding: 0;
+}
+
+.film-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.film-list li:last-child {
+    border-bottom: none;
+}
+
+.rating {
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body {
