@@ -198,6 +198,67 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Nokia Screen Theme (Films page) */
+body.nokia-screen {
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    line-height: 1.4;
+    background-color: #84a832;
+    color: #2b3d0f;
+}
+
+body.nokia-screen main {
+    background-color: #9fc21f;
+    border: 2px solid #2b3d0f;
+    box-shadow: inset 0 0 20px rgba(43, 61, 15, 0.15);
+}
+
+body.nokia-screen header {
+    border-bottom: 2px solid #2b3d0f;
+}
+
+body.nokia-screen h1 {
+    font-family: 'VT323', monospace;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #2b3d0f;
+}
+
+body.nokia-screen h2 {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: #2b3d0f;
+    opacity: 0.8;
+}
+
+body.nokia-screen p {
+    color: #2b3d0f;
+}
+
+body.nokia-screen a {
+    color: #2b3d0f;
+    border-bottom: 1px solid #2b3d0f;
+}
+
+body.nokia-screen a:hover {
+    opacity: 0.7;
+}
+
+body.nokia-screen .film-list li {
+    border-bottom: 1px solid rgba(43, 61, 15, 0.3);
+    font-size: 1.1rem;
+}
+
+body.nokia-screen .rating {
+    color: #2b3d0f;
+    opacity: 0.7;
+}
+
+body.nokia-screen .theme-toggle {
+    display: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body {
