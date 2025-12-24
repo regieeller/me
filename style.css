@@ -121,6 +121,16 @@ a:hover {
     opacity: 0.6;
 }
 
+/* Subtle link (for professional title) */
+.subtle-link {
+    border-bottom: none;
+    color: inherit;
+}
+
+.subtle-link:hover {
+    opacity: 0.7;
+}
+
 /* Theme toggle button */
 .theme-toggle {
     position: fixed;
