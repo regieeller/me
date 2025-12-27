@@ -208,6 +208,103 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Recipe styling */
+.recipe {
+    max-width: 100%;
+}
+
+.recipe-title {
+    font-family: 'IM Fell English SC', Georgia, serif;
+    font-size: 1.5rem;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.recipe-meta {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.recipe-meta p {
+    margin-bottom: 1rem;
+}
+
+.recipe-section {
+    margin-bottom: 2.5rem;
+}
+
+.recipe-section h3 {
+    font-family: 'IM Fell English SC', Georgia, serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-muted);
+}
+
+.recipe-section h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.recipe-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-section ul li {
+    padding: 0.3rem 0;
+    color: var(--text-secondary);
+}
+
+.recipe-section ul li::before {
+    content: "• ";
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+
+.recipe-steps {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+}
+
+.recipe-steps li {
+    counter-increment: step-counter;
+    margin-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.recipe-steps li::before {
+    content: counter(step-counter) ".";
+    position: absolute;
+    left: 0;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.recipe-steps li strong {
+    color: var(--text-primary);
+    font-weight: 400;
+    font-style: italic;
+}
+
 /* Nokia Screen Theme (Films page) */
 body.nokia-screen {
     font-family: 'VT323', monospace;

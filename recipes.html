@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regie Eller's Recipes">
+    <title>Recipes - Regie Eller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">◐</button>
+
+    <main>
+        <header>
+            <h1>Recipes</h1>
+            <p><a href="index.html">← Back</a></p>
+        </header>
+
+        <article class="recipe">
+            <h2 class="recipe-title">The "French Onion Soup" Loaf</h2>
+
+            <section class="recipe-meta">
+                <p><strong>Description:</strong> A savory brioche dough hydrated with concentrated beef stock instead of milk, swirled with a jam of caramelized onions and Gruyère cheese. The crumb is golden-brown and savory, and the crust is a crispy "frico" cheese skirt.</p>
+
+                <p><strong>Yield:</strong> 1 Loaf (9x5 inch pan)</p>
+
+                <p><strong>Time:</strong><br>
+                Active: 45 min<br>
+                Passive: 2 hrs (Rise times)<br>
+                Cook: 50 min</p>
+            </section>
+
+            <section class="recipe-section">
+                <h3>Ingredients</h3>
+
+                <h4>The Onion Jam</h4>
+                <ul>
+                    <li>3 Large Yellow Onions (Thinly Sliced)</li>
+                    <li>1 tbsp Olive Oil</li>
+                    <li>2 tbsp Sherry or Dry White Wine</li>
+                    <li>1 tbsp Fresh Thyme Leaves</li>
+                    <li>Pinch of Salt</li>
+                </ul>
+
+                <h4>The Dough</h4>
+                <ul>
+                    <li>350g Bread Flour</li>
+                    <li>30g Granulated Sugar</li>
+                    <li>7g Instant Yeast</li>
+                    <li>8g Sea Salt</li>
+                    <li>160g Beef Stock (Warm - 110°F)</li>
+                    <li>1 Large Egg (Room Temp)</li>
+                    <li>60g Unsalted Butter (Softened)</li>
+                </ul>
+
+                <h4>The Cheese Filling & Crust</h4>
+                <ul>
+                    <li>150g Gruyère Cheese (Grated - Divided use)</li>
+                    <li>30g Parmesan (Grated)</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h3>Instructions</h3>
+
+                <ol class="recipe-steps">
+                    <li>
+                        <strong>Prepare the Onion Jam</strong><br>
+                        Heat the olive oil in a heavy skillet or cast iron pan. Add the onions and a pinch of salt. Cook over medium-low heat, stirring occasionally, for 45-60 minutes. You want them deep brown and sticky with almost no moisture left (this prevents the bread from getting soggy). Deglaze the pan with the Sherry, scraping up the brown bits. Stir in the thyme and let cool completely.
+                    </li>
+                    <li>
+                        <strong>Mix the Dough</strong><br>
+                        In a stand mixer, combine the flour, sugar, yeast, and salt. Add the warm beef stock and egg. Mix on low until combined. Add the softened butter one tablespoon at a time. Knead on medium speed for about 10 minutes until the dough is smooth, elastic, and slightly tacky.
+                    </li>
+                    <li>
+                        <strong>First Rise</strong><br>
+                        Cover the dough and let it rise in a warm spot for 1 hour, or until doubled in size.
+                    </li>
+                    <li>
+                        <strong>Assemble the Loaf</strong><br>
+                        Roll the dough out into a 12x16 inch rectangle. Spread the cooled onion jam evenly over the dough, leaving a 1-inch border. Scatter 100g of the Gruyère cheese over the onions. Roll the dough tightly into a log. Slice the log lengthwise to expose the layers, then twist the two strands together (like a Babka). Place into a greased 9x5 loaf pan.
+                    </li>
+                    <li>
+                        <strong>Second Rise</strong><br>
+                        Cover the pan and let rise for 45-60 minutes.
+                    </li>
+                    <li>
+                        <strong>Bake</strong><br>
+                        Preheat your oven to 350°F (175°C). Bake the loaf for about 35 minutes.
+                    </li>
+                    <li>
+                        <strong>The Cheese Crust</strong><br>
+                        After 35 minutes, carefully open the oven and scatter the remaining 50g of Gruyère and the 30g of Parmesan on top of the loaf. Bake for another 15 minutes until the cheese is melted and crispy and the internal temperature of the bread reads 190°F.
+                    </li>
+                    <li>
+                        <strong>Serving</strong><br>
+                        Let cool slightly before slicing. If eating the next day, toast the slices to re-soften the crumb.
+                    </li>
+                </ol>
+            </section>
+        </article>
+    </main>
+
+    <script>
+        // Dark mode toggle
+        const toggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        toggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+</html>
