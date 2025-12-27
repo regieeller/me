@@ -213,6 +213,22 @@ a:hover {
     max-width: 100%;
 }
 
+.recipe-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.recipe-list li::before {
+    content: "— ";
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+
 .recipe-title {
     font-family: 'IM Fell English SC', Georgia, serif;
     font-size: 1.5rem;
