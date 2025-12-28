@@ -1,0 +1,354 @@
+/* SC Watchdog - Professional Utilitarian Design */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root variables */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-accent: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --accent-color: #0056b3;
+    --accent-hover: #003d82;
+}
+
+/* Typography and layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: var(--text-primary);
+    color: #ffffff;
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+header h1 a.home-link {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+header h1 a.home-link:hover {
+    opacity: 0.9;
+}
+
+.tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #adb5bd;
+    margin: 0;
+}
+
+/* Main content */
+main {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem 2rem;
+    min-height: 60vh;
+}
+
+/* Sections */
+section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Headings */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+h4 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent-hover);
+}
+
+/* Mission section */
+.mission {
+    background-color: var(--bg-accent);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    border-bottom: none;
+}
+
+/* Town list */
+.town-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.town-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+}
+
+.town-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.town-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.town-card h3 a {
+    color: var(--accent-color);
+    border-bottom: none;
+    font-size: 1.25rem;
+}
+
+.town-card h3 a:hover {
+    color: var(--accent-hover);
+}
+
+.town-meta {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+/* Town header */
+.town-header {
+    background-color: var(--bg-accent);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    margin-bottom: 2.5rem;
+    border-bottom: none;
+}
+
+.town-header h2 {
+    font-size: 1.75rem;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.investigation-meta {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Updates section */
+.update {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.update:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.update-header {
+    margin-bottom: 1rem;
+}
+
+.update-header h3 {
+    margin-bottom: 0.25rem;
+}
+
+.update-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.update-content {
+    color: var(--text-secondary);
+}
+
+/* Documents section */
+.documents {
+    padding: 1rem 0;
+}
+
+.document {
+    background-color: var(--bg-accent);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.document:last-child {
+    margin-bottom: 0;
+}
+
+.document h4 {
+    margin-bottom: 0.5rem;
+}
+
+.document p {
+    margin-bottom: 0.75rem;
+}
+
+.document a {
+    font-weight: 600;
+}
+
+.placeholder {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-primary);
+    color: #adb5bd;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    color: #adb5bd;
+    font-size: 0.875rem;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+footer a:hover {
+    color: #dee2e6;
+    border-bottom-color: #dee2e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    header {
+        padding: 1.5rem 1.25rem 1.25rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 2rem 1.25rem;
+    }
+
+    section {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .mission,
+    .town-header {
+        padding: 1.25rem;
+    }
+
+    .town-card {
+        padding: 1.25rem;
+    }
+
+    footer {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .tagline {
+        font-size: 0.9375rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    h2 {
+        font-size: 0.8125rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+}
