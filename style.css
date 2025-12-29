@@ -208,6 +208,19 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Recipe and review styling */
+.recipe, .review {
+    max-width: 100%;
+}
+
+.review p {
+    margin-bottom: 1.5rem;
+}
+
+.review p:last-child {
+    margin-bottom: 0;
+}
+
 /* Recipe styling */
 .recipe {
     max-width: 100%;

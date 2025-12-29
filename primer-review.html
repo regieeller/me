@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regie Eller's Review of Primer">
+    <title>Primer Review - Regie Eller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="nokia-screen">
+    <main>
+        <header>
+            <h1>Primer</h1>
+            <p><a href="films.html">← Back to Films</a></p>
+        </header>
+
+        <article class="review">
+            <p>Some films explain time travel with diagrams and exposition. Primer makes you live inside the confusion. The timeline fractures. You fracture with it. This is not a flaw. This is the film working exactly as intended.</p>
+
+            <p>Shane Carruth shot this for seven thousand dollars in a garage. You feel the budget in the fluorescent hum and the grainy image and the cramped spaces where two engineers work in secret. But the limitation becomes the truth. This looks like what it is. Two men building something they don't fully understand. No Hollywood sheen. No score to tell you how to feel. Just the sound of machinery and static and the mounting dread of realizing you've broken something you can't fix.</p>
+
+            <p>Aaron and Abe start as partners. They build together. They test together. Then one of them makes a choice without the other. That's the fracture. Not the discovery itself. The lie. Power doesn't corrupt them slowly. It corrupts them the moment they realize they have it. Trust dies not from malice but from the belief that knowing more means controlling more.</p>
+
+            <p>You will not understand this film on first watch. Your brain will melt. You will rewatch immediately. You will rewatch again. Each time you will catch something you missed. A detail in the background. A line of dialogue that suddenly clarifies what came before. The film doesn't hide information to be clever. It hides information because that's what living through this would feel like. Omniscience is not clarity. Omniscience is drowning in variables you can't control.</p>
+
+            <p>The jargon matters. Aaron and Abe speak in technical fragments. Half sentences. Overlapping thought. This is how engineers talk when they're building something that shouldn't exist. The dialogue is not there to help you. It's there to be accurate. If you don't follow every word, you're experiencing what they're experiencing. The gap between understanding and control.</p>
+
+            <p>Other time travel films give you rules. Primer gives you consequence. You lose track of what's happening. So do they. The film never stops to explain because stopping would break the suffocation. You have to work for comprehension. That work is the point.</p>
+
+            <p>If this had a higher budget it would be worse. The rawness is not a compromise. It's the aesthetic. This is a passion project about a passion project. The film feels like contraband. Like something you're not supposed to see.</p>
+
+            <p>You will not leave this film satisfied. You will leave it haunted. Time is not a puzzle to solve. Time is a thing you break. And once you break it, the question becomes whether you can stop.</p>
+        </article>
+    </main>
+
+    <script>
+        // Dark mode toggle
+        const toggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        toggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+</html>
