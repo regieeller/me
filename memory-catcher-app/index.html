@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Capture and recall life's memories effortlessly">
+    <meta name="theme-color" content="#4F46E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Memory Catcher">
+
+    <title>Memory Catcher</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💭</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💭</text></svg>">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app" class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <h1 class="app-title">💭 Memory Catcher</h1>
+            <button id="menuBtn" class="icon-btn" aria-label="Menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Menu Overlay -->
+        <div id="menuOverlay" class="menu-overlay hidden">
+            <div class="menu-content">
+                <button id="closeMenuBtn" class="icon-btn close-btn">✕</button>
+                <h2>Menu</h2>
+                <button id="exportBtn" class="menu-item">📤 Export All Memories</button>
+                <button id="randomMemoryBtn" class="menu-item">🎲 Random Memory</button>
+                <button id="statsBtn" class="menu-item">📊 Statistics</button>
+                <button id="aboutBtn" class="menu-item">ℹ️ About</button>
+            </div>
+        </div>
+
+        <!-- Main Views -->
+        <div id="views">
+
+            <!-- Timeline View (Default) -->
+            <div id="timelineView" class="view active">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search memories...">
+                    <button id="clearSearch" class="icon-btn hidden">✕</button>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="today">Today</button>
+                    <button class="filter-tab" data-filter="week">This Week</button>
+                    <button class="filter-tab" data-filter="month">This Month</button>
+                </div>
+
+                <!-- Memories List -->
+                <div id="memoriesList" class="memories-list">
+                    <!-- Memories will be inserted here -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">💭</div>
+                    <h2>No Memories Yet</h2>
+                    <p>Tap the + button below to capture your first memory</p>
+                </div>
+            </div>
+
+            <!-- Capture View -->
+            <div id="captureView" class="view">
+                <div class="capture-container">
+                    <h2>New Memory</h2>
+
+                    <textarea id="memoryText" class="memory-input" placeholder="What would you like to remember?"></textarea>
+
+                    <!-- Media Preview -->
+                    <div id="mediaPreview" class="media-preview hidden"></div>
+
+                    <!-- Auto-tags Preview -->
+                    <div id="tagsPreview" class="tags-preview hidden"></div>
+
+                    <!-- Capture Options -->
+                    <div class="capture-options">
+                        <label class="option-btn">
+                            <input type="file" id="photoInput" accept="image/*" capture="environment" hidden>
+                            <span>📷 Photo</span>
+                        </label>
+                        <button id="voiceBtn" class="option-btn">
+                            <span id="voiceBtnText">🎤 Voice</span>
+                        </button>
+                    </div>
+
+                    <!-- Voice Recording UI -->
+                    <div id="voiceRecording" class="voice-recording hidden">
+                        <div class="recording-indicator">
+                            <div class="pulse"></div>
+                            <span id="recordingTime">0:00</span>
+                        </div>
+                        <button id="stopRecording" class="btn btn-danger">Stop Recording</button>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button id="cancelCapture" class="btn btn-secondary">Cancel</button>
+                        <button id="saveMemory" class="btn btn-primary">Save Memory</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail View -->
+            <div id="detailView" class="view">
+                <div class="detail-container">
+                    <button id="closeDetail" class="icon-btn close-btn">←</button>
+                    <div id="detailContent"></div>
+                    <div class="detail-actions">
+                        <button id="deleteMemory" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Floating Action Button -->
+        <button id="fabBtn" class="fab">
+            <span id="fabIcon">+</span>
+        </button>
+
+        <!-- Toast Notifications -->
+        <div id="toast" class="toast hidden"></div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
