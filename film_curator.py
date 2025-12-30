@@ -7,8 +7,8 @@ Web interface for personalized film recommendations
 from flask import Flask, render_template, request, jsonify
 import json
 import os
-import subprocess
-from datetime import datetime
+from recommender import FilmRecommender
+from website_updater import WebsiteUpdater
 
 app = Flask(__name__)
 
@@ -16,6 +16,8 @@ class FilmCurator:
     def __init__(self):
         self.load_database()
         self.analyze_taste()
+        self.recommender = FilmRecommender(self)
+        self.updater = WebsiteUpdater()
 
     def load_database(self):
         """Load films database"""
@@ -74,7 +76,7 @@ class FilmCurator:
 
         return False, None, None
 
-    def rate_film(self, title, rating):
+    def rate_film(self, title, rating, auto_commit=True):
         """Rate a watched film"""
         # Check if already exists
         for film in self.db['watched']:
@@ -82,6 +84,10 @@ class FilmCurator:
                 film['rating'] = rating
                 self.save_database()
                 self.analyze_taste()
+
+                if auto_commit:
+                    self._sync_to_website(f"Update {title} rating to {rating}/10")
+
                 return True, f"Updated {title} to {rating}/10"
 
         # Add new film
@@ -96,6 +102,10 @@ class FilmCurator:
 
         self.save_database()
         self.analyze_taste()
+
+        if auto_commit:
+            self._sync_to_website(f"Add {title}: {rating}/10")
+
         return True, f"Added {title}: {rating}/10"
 
     def add_to_watchlist(self, title):
@@ -112,14 +122,30 @@ class FilmCurator:
 
         self.db['to_watch'].append({'title': title})
         self.save_database()
+
+        self._sync_to_website(f"Add {title} to watchlist")
+
         return True, f"Added {title} to watchlist"
+
+    def _sync_to_website(self, commit_message):
+        """Sync database to website and commit"""
+        try:
+            success, message = self.updater.sync_database_to_website(
+                self.db, commit_message
+            )
+            if success:
+                print(f"✓ Synced to website: {commit_message}")
+            else:
+                print(f"✗ Sync failed: {message}")
+        except Exception as e:
+            print(f"✗ Sync error: {e}")
 
 curator = FilmCurator()
 
 @app.route('/')
 def index():
     """Main interface"""
-    return render_template('index.html',
+    return render_template('curator.html',
                          watched_count=len(curator.db['watched']),
                          watchlist_count=len(curator.db['to_watch']))
 
@@ -128,6 +154,24 @@ def taste():
     """Show taste profile"""
     profile = curator.get_taste_summary()
     return jsonify(profile)
+
+@app.route('/hunt', methods=['POST'])
+def hunt():
+    """THE HUNT - Get recommendations"""
+    data = request.json
+    query = data.get('query', '')
+
+    if not query:
+        return jsonify({'error': 'Please provide a query'}), 400
+
+    try:
+        recommendations = curator.recommender.hunt(query, count=3)
+        return jsonify({
+            'query': query,
+            'recommendations': recommendations
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/rate', methods=['POST'])
 def rate():
@@ -179,6 +223,11 @@ if __name__ == '__main__':
     print("=" * 60)
     print(f"Watched films: {len(curator.db['watched'])}")
     print(f"Watchlist: {len(curator.db['to_watch'])}")
+    print("\nFeatures:")
+    print("  ✓ Film recommendations (THE HUNT)")
+    print("  ✓ Rate and track films")
+    print("  ✓ Auto-update website")
+    print("  ✓ Auto-commit to GitHub")
     print("\nStarting web interface...")
     print("Open: http://localhost:5000")
     print("=" * 60)

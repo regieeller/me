@@ -185,6 +185,14 @@
             <button onclick="addToWatchlist()">Add to Watchlist</button>
         </div>
 
+        <!-- THE HUNT - Get Recommendations -->
+        <div class="section">
+            <div class="section-title">THE HUNT</div>
+            <input type="text" id="huntQuery" placeholder="e.g., 'cerebral sci-fi', 'documentary', 'horror'">
+            <button onclick="hunt()">Get Recommendations</button>
+            <div id="huntResults" style="display: none; margin-top: 1rem;"></div>
+        </div>
+
         <!-- Your Taste Profile -->
         <div class="section">
             <div class="section-title">Your Taste Profile</div>
@@ -271,6 +279,54 @@
             if (data.success) {
                 document.getElementById('watchlistTitle').value = '';
             }
+        }
+
+        async function hunt() {
+            const query = document.getElementById('huntQuery').value;
+
+            if (!query) {
+                showMessage('Please enter a search query', 'error');
+                return;
+            }
+
+            showMessage('Hunting...', 'info');
+
+            const response = await fetch('/hunt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                showMessage(data.error, 'error');
+                return;
+            }
+
+            const results = document.getElementById('huntResults');
+            let html = `<h3 style="margin-bottom: 1rem;">THE HUNT: ${data.query}</h3>`;
+
+            data.recommendations.forEach((rec, i) => {
+                html += `
+                    <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                        <div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                            ${i + 1}. ${rec.title}
+                        </div>
+                        <div style="margin-bottom: 0.5rem; line-height: 1.6;">
+                            ${rec.hook}
+                        </div>
+                        <div style="color: #666; font-size: 0.9rem; font-style: italic;">
+                            Why: ${rec.why}
+                        </div>
+                        ${rec.tmdb_rating ? `<div style="color: #999; font-size: 0.85rem; margin-top: 0.25rem;">TMDB: ${rec.tmdb_rating}/10</div>` : ''}
+                    </div>
+                `;
+            });
+
+            results.innerHTML = html;
+            results.style.display = 'block';
+            showMessage('', '');  // Clear message
         }
 
         async function showTaste() {
