@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Curator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f1e8;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        button {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        .message {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .taste-profile {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .taste-category {
+            margin-bottom: 1rem;
+        }
+
+        .taste-category-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .film-list {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Film Curator</h1>
+        <p class="subtitle">Expert Film Recommendation System</p>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">{{ watched_count }}</div>
+                <div class="stat-label">Watched</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">{{ watchlist_count }}</div>
+                <div class="stat-label">Watchlist</div>
+            </div>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <!-- Rate Film -->
+        <div class="section">
+            <div class="section-title">Rate a Film</div>
+            <input type="text" id="rateTitle" placeholder="Film title">
+            <input type="number" id="rateRating" placeholder="Rating (0-10)" min="0" max="10" step="0.5">
+            <button onclick="rateFilm()">Rate Film</button>
+        </div>
+
+        <!-- Check Film -->
+        <div class="section">
+            <div class="section-title">Check if Seen</div>
+            <input type="text" id="checkTitle" placeholder="Film title">
+            <button onclick="checkFilm()">Check</button>
+        </div>
+
+        <!-- Add to Watchlist -->
+        <div class="section">
+            <div class="section-title">Add to Watchlist</div>
+            <input type="text" id="watchlistTitle" placeholder="Film title">
+            <button onclick="addToWatchlist()">Add to Watchlist</button>
+        </div>
+
+        <!-- Your Taste Profile -->
+        <div class="section">
+            <div class="section-title">Your Taste Profile</div>
+            <button onclick="showTaste()">Show Taste Analysis</button>
+            <div id="tasteProfile" class="taste-profile" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage(text, type = 'info') {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = `message ${type}`;
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 5000);
+        }
+
+        async function rateFilm() {
+            const title = document.getElementById('rateTitle').value;
+            const rating = document.getElementById('rateRating').value;
+
+            if (!title || !rating) {
+                showMessage('Please enter both title and rating', 'error');
+                return;
+            }
+
+            const response = await fetch('/rate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, rating })
+            });
+
+            const data = await response.json();
+            showMessage(data.message, data.success ? 'success' : 'error');
+
+            if (data.success) {
+                document.getElementById('rateTitle').value = '';
+                document.getElementById('rateRating').value = '';
+            }
+        }
+
+        async function checkFilm() {
+            const title = document.getElementById('checkTitle').value;
+
+            if (!title) {
+                showMessage('Please enter a title', 'error');
+                return;
+            }
+
+            const response = await fetch('/check', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title })
+            });
+
+            const data = await response.json();
+
+            if (data.seen) {
+                showMessage(data.message, 'info');
+            } else {
+                showMessage('Not in your database', 'success');
+            }
+        }
+
+        async function addToWatchlist() {
+            const title = document.getElementById('watchlistTitle').value;
+
+            if (!title) {
+                showMessage('Please enter a title', 'error');
+                return;
+            }
+
+            const response = await fetch('/add_to_watchlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title })
+            });
+
+            const data = await response.json();
+            showMessage(data.message, data.success ? 'success' : 'error');
+
+            if (data.success) {
+                document.getElementById('watchlistTitle').value = '';
+            }
+        }
+
+        async function showTaste() {
+            const response = await fetch('/taste');
+            const data = await response.json();
+
+            const profile = document.getElementById('tasteProfile');
+
+            let html = '';
+
+            if (data.perfection.length > 0) {
+                html += `<div class="taste-category">
+                    <div class="taste-category-title">Perfect 10/10:</div>
+                    <div class="film-list">${data.perfection.join(', ')}</div>
+                </div>`;
+            }
+
+            if (data.excellence.length > 0) {
+                html += `<div class="taste-category">
+                    <div class="taste-category-title">Excellence (9-9.5/10):</div>
+                    <div class="film-list">${data.excellence.join(', ')}</div>
+                </div>`;
+            }
+
+            if (data.avoid_patterns.length > 0) {
+                html += `<div class="taste-category">
+                    <div class="taste-category-title">Low Rated (≤6/10):</div>
+                    <div class="film-list">${data.avoid_patterns.join(', ')}</div>
+                </div>`;
+            }
+
+            profile.innerHTML = html;
+            profile.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
