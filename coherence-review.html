@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regie Eller's Review of Coherence">
+    <title>Coherence Review - Regie Eller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Courier+Prime&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier Prime', 'Courier New', monospace;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #e8e4dc;
+            background: #0a0a0a;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Fractured reality background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(90deg, rgba(255,0,100,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(45deg, rgba(100,255,0,0.02) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 50px 50px;
+            pointer-events: none;
+            animation: gridShift 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes gridShift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 3rem;
+            border: 1px solid rgba(232, 228, 220, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glitch effect on container */
+        main::before,
+        main::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(232, 228, 220, 0.15);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        main::before {
+            animation: glitchTop 3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+
+        main::after {
+            animation: glitchBottom 4s infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitchTop {
+            0%, 90%, 100% { transform: translate(0, 0); }
+            91% { transform: translate(-2px, 0); }
+            92% { transform: translate(2px, 0); }
+            93% { transform: translate(0, 0); }
+        }
+
+        @keyframes glitchBottom {
+            0%, 85%, 100% { transform: translate(0, 0); }
+            86% { transform: translate(2px, 0); }
+            87% { transform: translate(-2px, 0); }
+            88% { transform: translate(0, 0); }
+        }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(232, 228, 220, 0.2);
+        }
+
+        h1 {
+            font-family: 'IM Fell English SC', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: #e8e4dc;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow:
+                2px 0 0 rgba(255, 0, 100, 0.3),
+                -2px 0 0 rgba(0, 255, 255, 0.3),
+                0 2px 0 rgba(100, 255, 0, 0.2);
+        }
+
+        /* Color-coded markers (glow sticks) */
+        h1::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 60%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 0, 100, 0.6),
+                rgba(0, 255, 255, 0.6),
+                rgba(100, 255, 0, 0.6),
+                rgba(255, 200, 0, 0.6)
+            );
+            box-shadow:
+                0 0 10px rgba(255, 0, 100, 0.5),
+                0 0 10px rgba(0, 255, 255, 0.5);
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        a {
+            color: #00ffff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+        }
+
+        a:hover {
+            color: #ff0064;
+            border-bottom-color: #ff0064;
+            text-shadow: 0 0 8px rgba(255, 0, 100, 0.5);
+        }
+
+        .review {
+            max-width: 100%;
+        }
+
+        .review p {
+            margin-bottom: 1.8rem;
+            color: #e8e4dc;
+            position: relative;
+        }
+
+        /* Subtle reality fracture on paragraphs */
+        .review p:nth-child(3n)::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 1px;
+            top: 0;
+            color: rgba(255, 0, 100, 0.1);
+            z-index: -1;
+        }
+
+        .review p:nth-child(4n)::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(0, 255, 255, 0.5);
+            box-shadow:
+                0 0 6px rgba(0, 255, 255, 0.7),
+                0 0 12px rgba(0, 255, 255, 0.4);
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .review p:last-child {
+            margin-bottom: 0;
+            font-style: italic;
+            color: #00ffff;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(232, 228, 220, 0.2);
+            text-shadow:
+                1px 0 0 rgba(255, 0, 100, 0.3),
+                -1px 0 0 rgba(0, 255, 255, 0.3);
+        }
+
+        /* Chromatic aberration effect */
+        @keyframes chromatic {
+            0%, 95%, 100% {
+                text-shadow:
+                    2px 0 0 rgba(255, 0, 100, 0.3),
+                    -2px 0 0 rgba(0, 255, 255, 0.3),
+                    0 2px 0 rgba(100, 255, 0, 0.2);
+            }
+            96% {
+                text-shadow:
+                    3px 0 0 rgba(255, 0, 100, 0.5),
+                    -3px 0 0 rgba(0, 255, 255, 0.5),
+                    0 3px 0 rgba(100, 255, 0, 0.3);
+            }
+        }
+
+        h1 {
+            animation: chromatic 5s infinite;
+        }
+
+        /* Reality marker dots */
+        .reality-marker {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .marker-cyan {
+            background: #00ffff;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            top: 10%;
+            right: 10%;
+            animation: markerFloat 4s ease-in-out infinite;
+        }
+
+        .marker-magenta {
+            background: #ff0064;
+            box-shadow: 0 0 10px rgba(255, 0, 100, 0.8);
+            bottom: 15%;
+            left: 8%;
+            animation: markerFloat 5s ease-in-out infinite reverse;
+        }
+
+        .marker-green {
+            background: #64ff00;
+            box-shadow: 0 0 10px rgba(100, 255, 0, 0.8);
+            top: 40%;
+            right: 5%;
+            animation: markerFloat 6s ease-in-out infinite;
+        }
+
+        .marker-yellow {
+            background: #ffc800;
+            box-shadow: 0 0 10px rgba(255, 200, 0, 0.8);
+            bottom: 30%;
+            left: 15%;
+            animation: markerFloat 7s ease-in-out infinite reverse;
+        }
+
+        @keyframes markerFloat {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, -10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reality markers (glow sticks) -->
+    <div class="reality-marker marker-cyan"></div>
+    <div class="reality-marker marker-magenta"></div>
+    <div class="reality-marker marker-green"></div>
+    <div class="reality-marker marker-yellow"></div>
+
+    <main>
+        <header>
+            <h1>Coherence</h1>
+            <p><a href="films.html">← Back to Films</a></p>
+        </header>
+
+        <article class="review">
+            <p>This is what it feels like when reality fractures.</p>
+
+            <p>A dinner party. A passing comet. The power goes out. Someone suggests checking the one house on the block that still has lights. Two people volunteer. They come back different.</p>
+
+            <p>Not wrong. Different.</p>
+
+            <p>Coherence doesn't explain. It traps you inside the panic. The confusion. The slow realization that the rules stopped applying and no one told you when.</p>
+
+            <p>They use glow sticks as markers. Blue. Red. Green. Color-coded realities. A desperate attempt to track which version of the night they're living. But the colors start bleeding together. The versions multiply. You lose track.</p>
+
+            <p>So do they.</p>
+
+            <p>The handheld camera never steadies. The house feels small. Claustrophobic. Everyone talks over each other. No one listens. The blocking is loose. The performances feel improvised. Raw. Like watching footage from an actual breakdown.</p>
+
+            <p>There are other versions of you out there. Walking through identical nights. Making slightly different choices. What happens when you meet them? What happens when one version decides another shouldn't exist?</p>
+
+            <p>The film doesn't comfort you. It doesn't resolve. It ends with a woman staring at her phone. Terrified of what she might see. Terrified she already knows.</p>
+
+            <p>Coherence is a thought experiment with a body count. It makes quantum mechanics feel visceral. Real. Dangerous.</p>
+
+            <p>You'll spend the next week wondering which version of yourself made it to the end of the day.</p>
+
+            <p>Check the glow stick. Make sure it's the right color.</p>
+        </article>
+    </main>
+</body>
+</html>
