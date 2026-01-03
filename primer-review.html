@@ -7,13 +7,357 @@
     <title>Primer Review - Regie Eller</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #d4c5a0;
+            background: #1a1612;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Blueprint grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(212, 197, 160, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 197, 160, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(212, 197, 160, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 197, 160, 0.02) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Schematic lines */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(135deg, transparent 45%, rgba(212, 197, 160, 0.03) 45%, rgba(212, 197, 160, 0.03) 55%, transparent 55%),
+                linear-gradient(45deg, transparent 45%, rgba(212, 197, 160, 0.02) 45%, rgba(212, 197, 160, 0.02) 55%, transparent 55%);
+            background-size: 200px 200px, 200px 200px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            background: rgba(26, 22, 18, 0.92);
+            padding: 3rem;
+            border: 2px solid rgba(212, 197, 160, 0.2);
+            position: relative;
+            z-index: 1;
+            box-shadow:
+                0 0 0 1px rgba(212, 197, 160, 0.1),
+                inset 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline markers on the side */
+        main::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 10%;
+            bottom: 10%;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(212, 197, 160, 0.3) 10%,
+                rgba(212, 197, 160, 0.3) 90%,
+                transparent
+            );
+        }
+
+        main::after {
+            content: 'T₀';
+            position: absolute;
+            left: -60px;
+            top: 10%;
+            font-size: 0.75rem;
+            color: rgba(212, 197, 160, 0.4);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Timeline tick marks */
+        .timeline-tick {
+            position: absolute;
+            left: -45px;
+            width: 10px;
+            height: 1px;
+            background: rgba(212, 197, 160, 0.3);
+        }
+
+        .tick-1 { top: 20%; }
+        .tick-2 { top: 35%; }
+        .tick-3 { top: 50%; }
+        .tick-4 { top: 65%; }
+        .tick-5 { top: 80%; }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(212, 197, 160, 0.2);
+            position: relative;
+        }
+
+        /* Schematic annotation */
+        header::after {
+            content: 'FIG. 1: CAUSALITY LOOP';
+            position: absolute;
+            top: -10px;
+            right: 0;
+            font-size: 0.65rem;
+            color: rgba(212, 197, 160, 0.3);
+            letter-spacing: 0.15em;
+        }
+
+        h1 {
+            font-family: 'IM Fell English SC', Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: #d4c5a0;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow:
+                2px 2px 0 rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(212, 197, 160, 0.1);
+        }
+
+        /* Overlapping timeline effect on title */
+        h1::before {
+            content: 'PRIMER';
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            color: rgba(212, 197, 160, 0.15);
+            z-index: -1;
+        }
+
+        h1::after {
+            content: 'PRIMER';
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            color: rgba(212, 197, 160, 0.1);
+            z-index: -1;
+        }
+
+        a {
+            color: #d4c5a0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 197, 160, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #f4e5c0;
+            border-bottom-color: #f4e5c0;
+            text-shadow: 0 0 8px rgba(244, 229, 192, 0.3);
+        }
+
+        .review {
+            max-width: 100%;
+            position: relative;
+        }
+
+        .review p {
+            margin-bottom: 1.8rem;
+            color: #d4c5a0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        /* Paragraph markers (like technical annotations) */
+        .review p::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: rgba(212, 197, 160, 0.3);
+            font-weight: 500;
+        }
+
+        /* Loop indicators on select paragraphs */
+        .review p:nth-child(2)::after,
+        .review p:nth-child(5)::after {
+            content: '↻';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(212, 197, 160, 0.15);
+            font-size: 1.2rem;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: translateY(-50%) rotate(0deg); }
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        /* Bootstrap paradox indicator */
+        .review p:nth-child(4) {
+            position: relative;
+        }
+
+        .review p:nth-child(4)::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(212, 197, 160, 0.2),
+                transparent
+            );
+        }
+
+        /* Technical note styling */
+        .review p:last-child {
+            margin-bottom: 0;
+            font-style: italic;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 197, 160, 0.2);
+            position: relative;
+        }
+
+        .review p:last-child::before {
+            content: 'NOTE:';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: rgba(212, 197, 160, 0.4);
+        }
+
+        .review p:last-child::after {
+            content: none;
+        }
+
+        /* Temporal overlap effect */
+        @keyframes temporalShift {
+            0%, 95%, 100% { opacity: 0; }
+            96%, 98% { opacity: 0.05; }
+        }
+
+        .review::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                transparent 0%,
+                rgba(212, 197, 160, 0.03) 50%,
+                transparent 100%
+            );
+            pointer-events: none;
+            animation: temporalShift 7s infinite;
+        }
+
+        /* Schematic corner brackets */
+        main {
+            position: relative;
+        }
+
+        .corner-bracket {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(212, 197, 160, 0.3);
+        }
+
+        .bracket-tl {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .bracket-tr {
+            top: 10px;
+            right: 10px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .bracket-bl {
+            bottom: 10px;
+            left: 10px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .bracket-br {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Ambient flicker (like fluorescent lights) */
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.98; }
+        }
+
+        body {
+            animation: flicker 4s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body class="nokia-screen">
+<body>
     <main>
+        <!-- Schematic corner brackets -->
+        <div class="corner-bracket bracket-tl"></div>
+        <div class="corner-bracket bracket-tr"></div>
+        <div class="corner-bracket bracket-bl"></div>
+        <div class="corner-bracket bracket-br"></div>
+
+        <!-- Timeline tick marks -->
+        <div class="timeline-tick tick-1"></div>
+        <div class="timeline-tick tick-2"></div>
+        <div class="timeline-tick tick-3"></div>
+        <div class="timeline-tick tick-4"></div>
+        <div class="timeline-tick tick-5"></div>
+
         <header>
-            <h1>Primer</h1>
+            <h1>PRIMER</h1>
             <p><a href="films.html">← Back to Films</a></p>
         </header>
 
@@ -35,21 +379,5 @@
             <p>You will not leave this film satisfied. You will leave it haunted. Time is not a puzzle to solve. Time is a thing you break. And once you break it, the question becomes whether you can stop.</p>
         </article>
     </main>
-
-    <script>
-        // Dark mode toggle
-        const toggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
-
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-
-        toggle.addEventListener('click', () => {
-            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        });
-    </script>
 </body>
 </html>
