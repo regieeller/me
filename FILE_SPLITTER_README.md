@@ -9,8 +9,33 @@ A simple, no-frills utility to split large files into smaller chunks and merge t
 - Automatic manifest generation for easy merging
 - Size verification to ensure data integrity
 - Handles files up to 100MB easily (and beyond if needed)
+- **Web interface for use from any device (phone, tablet, etc.)**
 
-## Usage
+## Quick Start - Web Interface (For Phone/Mobile Use)
+
+The easiest way to use this tool from your phone:
+
+1. **Install Flask** (one-time setup):
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Start the web server**:
+   ```bash
+   python3 file_splitter_web.py
+   ```
+
+3. **Access from your phone**:
+   - Make sure your phone is on the same WiFi as your computer
+   - Find your computer's IP address (e.g., 192.168.1.100)
+   - Open browser on phone and go to: `http://YOUR_IP:5000`
+
+4. **Use the interface**:
+   - Upload a file, set chunk size, and split
+   - Download the ZIP containing all chunks
+   - Or upload chunks + manifest to merge them back
+
+## Command Line Usage
 
 ### Split a file
 
@@ -98,5 +123,10 @@ Merge complete!
 
 ## Requirements
 
+**Command line tool:**
 - Python 3.6 or higher
 - No external dependencies required
+
+**Web interface:**
+- Python 3.6 or higher
+- Flask (install with: `pip install -r requirements.txt`)
