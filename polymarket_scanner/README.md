@@ -13,17 +13,29 @@ The scanner continuously monitors Polymarket markets and alerts you when it dete
 - 📊 **Volume Spikes**: Unusual trading volume compared to historical average
 - 🎪 **Market Concentration**: Single wallets controlling large portions of markets
 
-## Quick Start
+## Documentation (Choose Your Path)
+
+**👋 New to this? Not technical?**
+→ Start here: **[QUICK_START.md](QUICK_START.md)** (5 minutes)
+→ Then read: **[SOP_BEGINNERS.md](SOP_BEGINNERS.md)** (Complete guide)
+→ Print this: **[DAILY_CHECKLIST.md](DAILY_CHECKLIST.md)** (Daily workflow)
+
+**💻 Technical user?**
+→ Read: **[SETUP_GUIDE.md](SETUP_GUIDE.md)** (Installation details)
+→ Reference: **[SOP.md](SOP.md)** (Advanced operations)
+
+**🎯 Just want to see it work?**
+→ **[QUICK_START.md](QUICK_START.md)** (Copy/paste 4 commands, done)
+
+## Absolute Quickest Start
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the scanner
-python scanner.py
+cd /home/user/me/polymarket_scanner
+pip3 install -r requirements.txt
+python3 scanner.py
 ```
 
-The scanner will run continuously, checking markets every 60 seconds by default.
+Press `Ctrl+C` to stop. That's it!
 
 ## Configuration
 
