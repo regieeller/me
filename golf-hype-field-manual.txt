@@ -1,0 +1,394 @@
+FIELD MANUAL: GOLF HYPE VIDEO
+Role: Amateur Field Team
+Goal: High-Energy Cinematic Hype
+Spec: 4K at 60fps (Standard)
+Orientation: Horizontal (16:9) unless marked Vertical
+
+==================================================
+⚠️ THE GOLDEN RULE
+==================================================
+Don't be afraid to shoot.
+
+1. The list below is the floor, not the ceiling.
+2. If you see something cool, SHOOT IT.
+3. I can't edit what I don't have. Send too much rather than too little.
+
+COVERAGE RULE: For key shots (Worm Burner, Orbit, Office Stare, Hero Walk), try to get 3-5 different golfers doing the same shot. This gives me editing options and variety.
+
+==================================================
+1. EQUIPMENT CHECKLIST
+==================================================
+[ ] Device: iPhone (13+) / Android (S21+) / GoPro
+[ ] Storage: 15GB+ free space (4K 60fps eats storage fast)
+[ ] Battery: Portable power bank
+[ ] Lens Cloth: WIPE LENS BEFORE EVERY SHOT as a precaution
+
+==================================================
+2. DEVICE SETUP (Set It & Forget It)
+==================================================
+
+We are shooting MOST shots at 60fps. Some shots require SLOW-MO mode (explained below).
+
+--- STANDARD 60FPS SETUP ---
+
+IPHONE (iOS 17+):
+1. Settings > Camera > Record Video > Select 4K at 60 fps
+2. Camera Settings > Preserve Settings > Turn ON Exposure Adjustment
+
+ANDROID (Samsung):
+1. Camera App > Video Mode > Resolution > Select UHD (4K) 60
+2. Turn ON "Super Steady" (Hand icon) if walking
+
+GOPRO:
+1. Res/FPS: 4K / 60
+2. Lens: Linear + Horizon Leveling
+
+
+--- WHEN TO USE SLOW-MO MODE ---
+
+Some shots below are marked "TECH: SLOW-MO" - for ONLY those shots, switch modes:
+
+IPHONE:
+- Swipe to "SLO-MO" mode (shoots at 240fps automatically)
+- After the shot, swipe BACK to regular Video mode
+
+ANDROID:
+- Swipe to "SLOW MOTION" mode (shoots at 120-240fps depending on phone)
+- After the shot, swipe BACK to Video mode
+
+GOPRO:
+- Change frame rate to 120fps or 240fps
+- After the shot, change BACK to 60fps
+
+
+--- HOW TO LOCK FOCUS/EXPOSURE ---
+
+For shots that say "Focus lock" or need steady exposure:
+
+IPHONE:
+- Tap and hold on the subject until "AE/AF LOCK" appears at the top
+- A yellow box will stay on screen
+
+ANDROID:
+- Tap the subject, then tap the lock icon that appears
+- Icon will turn yellow/locked
+
+GOPRO:
+- Tap screen on the subject (locks automatically)
+
+==================================================
+3. HOW TO SHOOT (Horizontal vs. Vertical)
+==================================================
+1. The "Default" is Horizontal
+   Hold the phone SIDEWAYS (Landscape) for 90% of the day.
+
+2. The "Double Tap" Method (For Vertical)
+   When you get a great Horizontal shot (e.g., a huge drive), ask them to "Do it again for the Gram." Turn the phone UPRIGHT (Vertical) and shoot it again.
+   (Marked as **VERTICAL ALSO: YES** in the list below).
+
+==================================================
+4. MASTER SHOT LIST
+==================================================
+
+A. HERO & ACTION (The "Sport")
+--------------------------------------------------
+[ ] The "Worm Burner" (Low Angle Drive)
+    SETUP: Lay phone on grass 3 feet behind the tee. Prop it against a tee or rock so it points UP at the golfer.
+    ACTION: Golfer hits a full driver swing over the camera.
+    TIMING: Start recording BEFORE they step up to the ball. Hold for 5 seconds AFTER the swing.
+    - You can get this shot with as many golfers as you want for a possible compilation of drives.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] The Swing Follow
+    SETUP: Stand 6ft behind the golfer. Hold phone horizontal at chest height.
+    ACTION: Golfer hits the ball.
+    TIMING: Start 3 seconds before swing. Twist your body to follow the ball into the sky. Hold on the empty sky for 3 seconds.
+    - Everyone who did the previous shot should also do this shot.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Tee Smash (POV)
+    SETUP: Hold camera 1 foot behind the ball (safely!). Get low. Focus lock on the logo of the golf ball.
+    ACTION: Golfer hits the ball (it will disappear instantly).
+    TIMING: Hit record. Wait 3 seconds. Golfer hits. Wait 3 seconds. Cut.
+    - Same golfers as previous shot. Different version for dynamic editing.
+    TECH: SLOW-MO | VERTICAL ALSO: YES
+
+[ ] Ball Flight Tracking
+    SETUP: Stand beside the golfer. Point camera at the sky where the ball will go.
+    ACTION: Track the ball's arc from swing to landing. Follow it smoothly with the camera.
+    TIMING: Start recording before swing. Follow the ball through the entire flight. Hold 2 seconds after landing.
+    - This is tricky but looks amazing when done right. Try it a few times.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Sand Trap Blast
+    SETUP: Crouch low OUTSIDE the bunker (keep phone safe from sand). Do NOT zoom.
+    ACTION: Golfer hits ball out of sand. Ideally, a wall of sand flies up.
+    TIMING: Start 3 seconds before swing. Hold until the sand settles on the ground.
+    - Sand action would be nice for transitions. If you can't get close enough safely, skip this shot.
+    TECH: SLOW-MO | VERTICAL ALSO: NO
+
+[ ] The Divot
+    SETUP: Lay phone on the ground 2 feet in front of where the ball sits. Get LOW.
+    ACTION: Golfer takes swing and club rips out a chunk of grass toward camera.
+    TIMING: Start 3 seconds before swing. Hold 3 seconds after grass flies.
+    - Dramatic shot. Make sure phone is safe from club contact.
+    TECH: SLOW-MO | VERTICAL ALSO: NO
+
+[ ] The Orbit
+    SETUP: Golfer stands perfectly still holding their driver like a sword/cane.
+    ACTION: Shooter walks in a SLOW circle around the golfer (360 degrees). Take 20 seconds for full circle.
+    TIMING: Walk heel-to-toe like a ninja. Try to keep the golfer in the center of the frame the whole time.
+    - Can do this for as many golfers or 'faces' you want to be shown possibly.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Silhouette (Golden Hour Only)
+    SETUP: Find an angle where the Sun is directly BEHIND the golfer.
+    ACTION: Golfer takes a practice swing.
+    TIMING: Record the dark outline of the golfer against the bright sun. Hold for 10 seconds.
+    - Only works during golden hour (sunrise/sunset). Subject will be completely dark.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Club Selection
+    SETUP: Get close to golf bag. Focus on the hands.
+    ACTION: Golfer reaches into bag and pulls out a specific club.
+    TIMING: Start recording before hand enters frame. Hold 2 seconds after club is pulled out.
+    - Nice detail shot that tells story.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+B. TEXTURE & DETAILS (The "Vibe")
+--------------------------------------------------
+[ ] The Glove Snap
+    SETUP: Extreme close-up on the golfer's hand.
+    ACTION: Golfer pulls the velcro strap tight on their glove.
+    TIMING: Record the "Riiip" sound. Do it 2-3 times. Get within 2 feet for good audio.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] The Tee-Up
+    SETUP: Place phone ON the ground. Lens touching the grass.
+    ACTION: Golfer pushes the tee and ball into the ground right in front of the lens.
+    TIMING: Record the hand coming down and pushing the ball in. Hold 2 seconds after.
+    TECH: SLOW-MO | VERTICAL ALSO: YES
+
+[ ] Grip Close-Up
+    SETUP: Tight shot on hands gripping the club.
+    ACTION: Golfer wraps fingers around the grip and adjusts their hold.
+    TIMING: Record the full adjustment process (5-8 seconds).
+    - Classic pre-shot ritual. Very cinematic.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Shoe Clean
+    SETUP: Close-up on the golfer's feet/ankles.
+    ACTION: Golfer taps their club against their shoe to knock off sand/mud.
+    TIMING: Record 10 seconds of tapping.
+    TECH: SLOW-MO | VERTICAL ALSO: NO
+
+[ ] Pencil Drop
+    SETUP: Close-up on the scorecard in someone's hand.
+    ACTION: Golfer aggressively circles a "3" or "4" or writes a score.
+    TIMING: Record the writing action. Hold for 3 seconds after they lift the pencil.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Ball Marker Placement
+    SETUP: Crouch low near the green. Focus on the ball.
+    ACTION: Golfer places coin/marker behind ball on green, then picks up ball.
+    TIMING: Record the full action from hand entering frame to ball being lifted.
+    - Nice detail for putting sequence.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Sunglasses Reflection
+    SETUP: Extreme close-up on a golfer's sunglasses.
+    ACTION: Adjust angle until you can see the course reflected in the lenses.
+    TIMING: Hold very still for 8 seconds. Lock focus on the glasses.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] The "Drip" (Bag Walk)
+    SETUP: Crouch low behind the golfer while they walk.
+    ACTION: Focus on the bag tag or towel swinging on their bag.
+    TIMING: Walk with them for 10 steps. Keep the bag in focus.
+    TECH: SLOW-MO | VERTICAL ALSO: YES
+
+[ ] Green Flag Flutter
+    SETUP: Stand near the hole.
+    ACTION: Focus on the flag waving against the sky or trees.
+    TIMING: Hold completely still for 10 seconds.
+    - Great for establishing shots or transitions.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Ball in Hole (Sound)
+    SETUP: Place phone on the green, 6 inches from the cup.
+    ACTION: Golfer drops a ball into the cup by hand (or putts it in).
+    TIMING: We need the "Rattle" sound. Record 3 seconds of silence, then the drop. Get close for audio.
+    - Multiple versions are okay.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Cooler/Beverage
+    SETUP: Close-up on cooler or drink station.
+    ACTION: Someone grabs a beer/water from cooler, cracks it open.
+    TIMING: Record the full action including the "Crack/Fizz" sound. 5-8 seconds.
+    - Fun vibe shot. Social element.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Shadows on Grass
+    SETUP: Point camera DOWN at the grass during golden hour.
+    ACTION: Golfer takes a practice swing. Their shadow moves across the frame.
+    TIMING: Record 8-10 seconds of the shadow movement.
+    - Only works with good sun angle. Very artistic.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+C. TRANSITIONS (The "Glue")
+--------------------------------------------------
+[ ] Cart Ride (Motion)
+    SETUP: Sit in passenger seat. Hold phone low outside the cart.
+    ACTION: Driver drives fast down a path.
+    TIMING: Record the ground/wheels blurring by for 10 seconds.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] The Lens Cover (Fade to Black)
+    SETUP: Stand still. Point camera at golfer from 6ft away.
+    ACTION: Golfer walks directly TOWARD the camera until their chest/body fills the entire frame (screen goes black).
+    TIMING: Keep recording until the screen goes completely black. Hold 2 seconds.
+    - Have the golfer literally walk into the camera while the camera is perfectly still.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Sky Whip
+    SETUP: Start with phone pressed against golfer's chest (screen is black).
+    ACTION: Shooter quickly pulls phone away and whips camera straight UP to the empty sky.
+    TIMING: Start recording while pressed to chest -> Pull away and WHIP UP -> Hold sky for 2 seconds -> Cut.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Grass Whip
+    SETUP: Start with phone pressed against golfer's chest (screen is black).
+    ACTION: Shooter quickly pulls phone away and whips camera straight DOWN to the grass.
+    TIMING: Start recording while pressed to chest -> Pull away and WHIP DOWN -> Hold grass for 2 seconds -> Cut.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] The Pass-By (Wipe)
+    SETUP: Stand on the side of the cart path. Hold still.
+    ACTION: Golf cart drives past, momentarily blocking the view.
+    TIMING: Start recording before cart arrives. Cut after it passes completely out of frame.
+    - Natural transition wipe. Very useful.
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+[ ] Bag Drop
+    SETUP: Place camera on the ground pointing up.
+    ACTION: Golfer drops their bag onto the grass in front of the lens.
+    TIMING: Record the drop and the "Thud" sound. Get close for audio (within 3 feet).
+    TECH: 4K/60 | VERTICAL ALSO: NO
+
+D. REACTION & EMOTION (The "Story")
+--------------------------------------------------
+[ ] "Did it go in?"
+    SETUP: Stand near the hole. Point camera at the GOLFER'S FACE (not the ball).
+    ACTION: Golfer watches their putt. Reacts (Happy or Sad).
+    TIMING: Record the entire time the ball is rolling. Do not cut until they yell/sigh/react.
+    - Face tells the story, not the ball.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Pre-Shot Tension
+    SETUP: Get close to golfer's face (3-4 feet). Profile angle works well.
+    ACTION: Golfer reads the green or stares down the fairway before big shot.
+    TIMING: Record 5-8 seconds of them thinking/focusing.
+    - Shows concentration. Builds drama.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Group Cheers
+    SETUP: Get all players in frame. Low angle makes them look cooler.
+    ACTION: Count "1, 2, 3!" They throw hats in the air or high-five.
+    TIMING: Record the countdown and the celebration. Hold 3 seconds after.
+    TECH: SLOW-MO | VERTICAL ALSO: YES
+
+[ ] The "Office" Stare
+    SETUP: Stand 5ft from golfer.
+    ACTION: Golfer hits a shot, then looks directly into the camera lens and smiles/shrugs.
+    TIMING: Hold the eye contact for 3 full seconds.
+    - Be as casual as possible like you're looking at your buddy but in the lens.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] The Hero Walk
+    SETUP: Crouch low. Walk backwards (carefully!).
+    ACTION: The "team" of golfers walks toward you in a line (like a movie poster).
+    TIMING: Record 10 seconds of walking. Keep them centered in frame.
+    - Try to get 3-5 people minimum for this shot. Very cinematic.
+    TECH: SLOW-MO (or 4K/60 if slow-mo is confusing) | VERTICAL ALSO: YES
+
+[ ] Victory Pose
+    SETUP: Wide shot. Get golfer's full body in frame.
+    ACTION: Golfer holds club high in air after making birdie/par. Celebrates.
+    TIMING: Record them raising club -> Hold pose for 5 seconds -> Cut.
+    - Classic sports celebration shot.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+[ ] Fist Bump
+    SETUP: Hold phone with one hand at waist level.
+    ACTION: Have the golfers walk up and fist bump the camera lens one at a time.
+    TIMING: Record them walking up -> Bump -> Screen goes dark -> Cut.
+    - Can do this with multiple golfers in a row for a compilation.
+    TECH: 4K/60 | VERTICAL ALSO: YES
+
+E. DRONE OPS (If Pilot Available)
+--------------------------------------------------
+⚠️ DRONE PILOT MUST: Have FAA Part 107 license, tournament permission, stay under 400ft AGL, avoid flying directly over people.
+
+[ ] Clubhouse Reveal
+    SETUP: Start drone low on grass (1 foot high).
+    ACTION: Fly UP and FORWARD quickly to reveal the clubhouse/course.
+    TIMING: 10 seconds continuous flight.
+
+[ ] Cart Chase
+    SETUP: Position drone 50ft behind and 50ft above a moving cart.
+    ACTION: Match the speed of the cart. Follow it down the path.
+    TIMING: 15 seconds continuous flight.
+
+[ ] Top-Down Green
+    SETUP: Fly directly over the green (100ft high). Point camera 90-degrees down.
+    ACTION: Hover perfectly still while golfers putt below.
+    TIMING: 15 seconds.
+
+[ ] Fairway Flyover
+    SETUP: Start at the tee box, 20 feet off the ground.
+    ACTION: Fly fast down the empty fairway toward the flag.
+    TIMING: One continuous shot from Tee to Green.
+
+F. PANIC BUTTON (Minimum Viable Coverage)
+--------------------------------------------------
+(If you are running out of time, ensure we have these 5 shots in HORIZONTAL)
+
+[ ] Wide Establish (Safety)
+    SETUP: Lean phone against a tree or railing for stability.
+    ACTION: Record the nicest view of the course. Do not move.
+    TIMING: 15-30 seconds static.
+
+[ ] The Drive (Safety)
+    SETUP: Stand safely behind the golfer.
+    ACTION: Record one full swing from address to follow-through.
+    TIMING: Start 5 seconds before swing, hold 5 seconds after.
+
+[ ] The Putt (Safety)
+    SETUP: Crouch low near the hole.
+    ACTION: Record the ball rolling past or into the hole.
+    TIMING: 10 seconds.
+
+[ ] The Fist Bump (Safety)
+    SETUP: Close up on hands.
+    ACTION: Two players high-five or fist bump.
+    TIMING: 5 seconds.
+
+[ ] The Sign (Safety)
+    SETUP: Stand in front of the main Tournament Welcome Sign.
+    ACTION: Record the sign (Static). Lock focus.
+    TIMING: 10 seconds.
+
+==================================================
+5. FINAL REMINDERS
+==================================================
+* STABILITY: "T-Rex Arms." Keep elbows glued to your ribs. Move your whole body, not just your hands.
+
+* LIGHTING: Keep the sun to your side or behind you. If the subject is a silhouette, move your feet 90 degrees. (Exception: the intentional Silhouette shot)
+
+* DON'T CUT EARLY: Count to 3 seconds AFTER the action finishes before you stop recording.
+
+* AUDIO: For shots marked with sound effects (Rattle, Riiip, Thud, Crack), get within 3 feet of the action. Cover mic with your hand if windy (leave small gap for sound).
+
+* BACKUP YOUR WORK: After every 5-10 shots, AirDrop or upload key clips to cloud storage. If your phone dies or gets damaged, I need SOMETHING to work with. Better to backup 5 times than lose the entire shoot.
+
+* DON'T PANIC: If you're overwhelmed, just shoot the Panic Button section. I can make magic with those 5 shots alone.
